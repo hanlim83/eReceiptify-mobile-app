@@ -2,8 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { Button, View, Text } from 'react-native';
 
-export default function ProfilePage(){
+export default function ProfilePage( {navigation} ) {
   return (
-    <Text>ProfilePage</Text>
+    <View>
+      <Text>ProfilePage</Text>
+      <Button
+        title="Go to Second Screen"
+        onPress={() => navigation.navigate('RegisterScreen')}
+      />
+    </View>
   )
 }
