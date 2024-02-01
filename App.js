@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -14,16 +15,21 @@ const tamaguiConfig = createTamagui(config);
 
 const Stack = createNativeStackNavigator();
 
+const Stack = createStackNavigator();
+const tamaguiConfig = createTamagui(config);
 
 export default function App() {
   return (
     <TamaguiProvider config={tamaguiConfig}>
       <NavigationContainer>
         <Stack.Navigator>
-        {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
 
+
+          {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} /> */}
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </TamaguiProvider>
