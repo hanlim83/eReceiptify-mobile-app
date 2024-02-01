@@ -4,13 +4,10 @@ import Widget from '../../widgets/ChartWidget';
 
 export default function SpendingPage() {
   const AllTimeGraphDATA = [
-    { day: 'S', steps: 10000 },
-    { day: 'M', steps: 10000 },
-    { day: 'T', steps: 10000 },
-    { day: 'W', steps: 10000 },
-    { day: 'T', steps: 10000 },
-    { day: 'F', steps: 10000 },
-    { day: 'S', steps: 10000 },
+    { day: 'Week 1', steps: 10000 },
+    { day: 'Week 2', steps: 10000 },
+    { day: 'Week 3', steps: 10000 },
+    { day: 'Week 4', steps: 10000 },
   ];
 
   return (
