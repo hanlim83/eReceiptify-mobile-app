@@ -11,6 +11,10 @@ import '@tamagui/core/reset.css';
 import { TamaguiProvider, createTamagui } from 'tamagui';
 import { config } from '@tamagui/config/v2';
 
+const tamaguiConfig = createTamagui(config);
+
+const Stack = createNativeStackNavigator();
+
 const Stack = createStackNavigator();
 const tamaguiConfig = createTamagui(config);
 
@@ -19,6 +23,8 @@ export default function App() {
     <TamaguiProvider config={tamaguiConfig}>
       <NavigationContainer>
         <Stack.Navigator>
+
+
           {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} /> */}
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
