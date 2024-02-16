@@ -19,7 +19,7 @@ function MyTabs() {
         }}
       >
         <Tab.Screen
-          name="Spending"
+          name="Transaction History"
           component={SpendingPage}
           options={{
             headerStyle: { backgroundColor: '#056272' },

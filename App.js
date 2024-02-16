@@ -11,9 +11,7 @@ import '@tamagui/core/reset.css';
 import { TamaguiProvider, createTamagui } from 'tamagui';
 import { config } from '@tamagui/config/v2';
 
-const tamaguiConfig = createTamagui(config);
-
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
 const Stack = createStackNavigator();
 const tamaguiConfig = createTamagui(config);
