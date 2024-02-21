@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image,  } from 'react-native';
 import { Camera } from 'expo-camera';
+import { Button } from 'tamagui';
+import ConfirmScreen from './ConfirmScreen';
 
-export default function CameraScreen() {
+export default function CameraScreen({navigation}) {
     const [hasPermission, setHasPermission] = useState(null);
     const [scannedData, setScannedData] = useState(null);
 
@@ -16,6 +18,7 @@ export default function CameraScreen() {
     const handleBarCodeScanned = ({ type, data }) => {
         console.log(`Bar code with type ${type} and data ${data} has been scanned!`);
         setScannedData({ type, data });
+        navigation.navigate(ConfirmScreen);
     };
 
     if (hasPermission === null) {
@@ -36,13 +39,8 @@ export default function CameraScreen() {
                     onBarCodeScanned={scannedData ? undefined : handleBarCodeScanned}
                 />
                 <Image source={require('../assets/scan.png')} style={styles.overlayImage} />
-                {scannedData && (
-                    <View style={styles.barcodeData}>
-                        <Text>Type: {scannedData.type}</Text>
-                        <Text>Data: {scannedData.data}</Text>
-                    </View>
-                )}
             </View>
+
         </View>
     );
 }
@@ -64,9 +62,10 @@ const styles = StyleSheet.create({
     },
     camera: {
         flex: 1,
+        height: "010%"
     },
     barcodeData: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         padding: 10,
         margin: 20,
         borderRadius: 10,
@@ -77,4 +76,5 @@ const styles = StyleSheet.create({
         height: '100%',
         zIndex: 1, // Ensure the overlay image appears above the camera
     },
+    
 });

@@ -38,9 +38,9 @@ export default function SpendingPage({ navigation }) {
   ];
 
 
-  const handleIconPress = () => {
+  const handleIconPress = ( item ) => {
     // Navigate to another page
-    navigation.navigate('ReceiptScreen');
+    navigation.navigate('ReceiptScreen', { item });
   };
 
   
@@ -48,7 +48,7 @@ export default function SpendingPage({ navigation }) {
     <View style={styles.rewardList}>
         <ListItem
           // icon={<Image style={styles.rewardIcon} source={require('../../assets/award.png')} />}
-          onPress={() => handleIconPress()}
+          onPress={() => handleIconPress(item)}
           iconAfter={<Text style={styles.text4}>{item.amount}</Text>}
           pressTheme hoverTheme title={item.description} subTitle={item.date}
         />

@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 const ReceiptScreen = () => {
+
+  const route = useRoute();
+  const { item } = route.params;
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Receipt</Text>
@@ -9,48 +14,17 @@ const ReceiptScreen = () => {
         <View style={styles.topHeader}>
           <Text style={styles.text}>Details</Text>
         </View>
-        <View style={styles}>
-          <Text>Receipt ID</Text>
-          <Text>987654321</Text>
+        <View style={styles.item}>
+          <Text>Description</Text>
+          <Text>{item.description}</Text>
         </View>
         <View style={styles.item}>
-          <Text>Invoice ID</Text>
-          <Text>123456789</Text>
-        </View>
-        <View style={styles.topHeader}>
-          <Text>Time Stamp</Text>
-          <Text>11:59</Text>
-        </View>
-        <View style={styles.topHeader}>
-          <Text style={styles.text}>Cart</Text>
+          <Text>Amount</Text>
+          <Text>{item.amount}</Text>
         </View>
         <View style={styles.item}>
-          <Text>Item 1</Text>
-          <Text>$10.00</Text>
-        </View>
-        <View style={styles.item}>
-          <Text></Text>
-          <Text>Qty: 5</Text>
-        </View>
-        <View style={styles.item}>
-          <Text>Item 2</Text>
-          <Text>$15.00</Text>
-        </View>
-        <View style={styles.item}>
-          <Text></Text>
-          <Text>Qty: 1</Text>
-        </View>
-        <View style={styles.item}>
-          <Text>Item 3</Text>
-          <Text>$20.00</Text>
-        </View>
-        <View style={styles.item}>
-          <Text></Text>
-          <Text>Qty: 2</Text>
-        </View>
-        <View style={styles.total}>
-          <Text style={styles.text}>Total:</Text>
-          <Text>$45.00</Text>
+          <Text>Date</Text>
+          <Text>{item.date}</Text>
         </View>
       </View>
     </View>

@@ -38,7 +38,7 @@ export default function ScanPayPage({ navigation }) {
       <Button alignSelf="center" style={styles.points}>Points = 10000</Button>
 
       <View style={styles.buttonContainer}>
-        <Button alignSelf="center" style={styles.qrCode} variant="outlined">
+        <Button alignSelf="center" style={styles.qrCode} variant="outlined"  onPress={() => navigation.navigate('QrCodeScreen')}>
           <View style={styles.box}>
             <Image source={require('../../assets/qr-code.png')} style={styles.image} />
           </View>

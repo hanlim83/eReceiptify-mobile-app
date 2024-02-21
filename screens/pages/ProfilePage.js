@@ -111,7 +111,7 @@ const Profile = ({navigation}) => {
             marginVertical: 8,
           }}
         >
-         <FontAwesome5 name="crown" size={16} color="#056272" /> Marco
+         <FontAwesome5 name="crown" size={16} color="#056272" /> Sathwik
         </Text>
         <Text
           style={{
