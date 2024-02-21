@@ -3,12 +3,31 @@ import React, { useState } from "react";
 import { StyleSheet } from 'react-native';
 import { Avatar, View, Form, Text, Input, Label, XStack, Button } from 'tamagui';
 import { LinearGradient } from 'expo-linear-gradient';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { CircleUser } from '@tamagui/lucide-icons'
 
 export default function RegisterScreen({ navigation }) {
-    const [show, setShow] = React.useState(false);
+    // const [dob, setDOB] = useState(new Date());
+    // const [showDatePicker, setShowDatePicker] = useState(false);
+
+    // const handleDateChange = (event, selectedDate) => {
+    //     const currentDate = selectedDate || dob;
+    //     setShowDatePicker(Platform.OS === 'ios');
+    //     setDOB(currentDate);
+    // };
+
+    // const showDatepicker = () => {
+    //     if (showDatePicker) {
+    //       setShowDatePicker(false); // Hide date picker if already shown
+    //       setDOB(null); // Clear current date
+    //     } else {
+    //       setShowDatePicker(true); // Show date picker if not shown
+    //     }
+    //   };
 
     return (
         <LinearGradient colors={['#EDEDED', '#B2BEB5', '#EDEDED']} style={styles.gradient}>
+            <Text></Text>
             <View style={styles.container}>
                 <Form>
                     <Text style={styles.textHeader}>
@@ -23,8 +42,61 @@ export default function RegisterScreen({ navigation }) {
                                 <Avatar.Image source={require('../assets/mail.png')} />
                             </Avatar>
                         </Label>
-                        <Input placeholder="Email or phone number" flex={1} id="email" />
+                        <Input placeholder="Email" flex={1} id="email" />
                     </XStack>
+                    <Text></Text>
+                    <XStack style={styles.input}>
+                        <Label style={styles.label} htmlFor="phone">
+                            <Avatar size="$2">
+                                <Avatar.Image source={require('../assets/phone.png')} />
+                            </Avatar>
+                        </Label>
+                        <Input placeholder="Phone Number" flex={1} id="phone" />
+                    </XStack>
+                    <Text></Text>
+                    <XStack style={styles.input}>
+                        <Label style={styles.label} htmlFor="fName">
+                            <Avatar size="$2">
+                                <Avatar.Image source={require('../assets/circle-user-round.png')} />
+                            </Avatar>
+                        </Label>
+                        <Input placeholder="First Name" flex={1} id="fName" />
+                    </XStack>
+                    <Text></Text>
+                    <XStack style={styles.input}>
+                        <Label style={styles.label} htmlFor="lName">
+                            <Avatar size="$2">
+                                <Avatar.Image source={require('../assets/circle-user-round.png')} />
+                            </Avatar>
+                        </Label>
+                        <Input placeholder="Last Name" flex={1} id="lName" />
+                    </XStack>
+                    {/* <Text></Text>
+                    <XStack style={styles.input}>
+                        <Label style={styles.label} htmlFor="dob">
+                            <Avatar size="$2">
+                                <Avatar.Image source={require('../assets/mail.png')} />
+                            </Avatar>
+                        </Label>
+                        <Input
+                            placeholder="Date of Birth"
+                            value={dob.toLocaleDateString()}
+                            editable={false}
+                        />
+                        <Button
+                            title="Set DOB"
+                            onPress={showDatepicker}
+                        />
+                        {showDatePicker && (
+                            <DateTimePicker
+                                value={dob}
+                                mode="date"
+                                is24Hour={true}
+                                display="default"
+                                onChange={handleDateChange}
+                            />
+                        )} */}
+                    {/* </XStack> */}
                     <Text></Text>
                     <XStack style={styles.input}>
                         <Label style={styles.label} htmlFor="password">
@@ -69,7 +141,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        margin: 50,
+        margin: 30,
         backgroundColor: "#191919",
         borderRadius: 40, // Add border radius for rounded corners
         shadowColor: 'black', // Add shadow color
@@ -116,6 +188,9 @@ const styles = StyleSheet.create({
         color: '#329AD8',
         top: -50,
         marginHorizontal: 50,
+    },
+    dob: {
+        color: 'white', // Set text color to white
     },
 });
 

@@ -6,6 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
+import ScanScreen from './screens/ScanScreen';
+import FaqScreen from './screens/FaqScreen';
+import ReceiptScreen from './screens/ReceiptScreen';
 
 import '@tamagui/core/reset.css';
 import { TamaguiProvider, createTamagui } from 'tamagui';
@@ -19,11 +22,12 @@ export default function App() {
     <TamaguiProvider config={tamaguiConfig}>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} /> */}
+          <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen name="ScanScreen" component={ScanScreen} options={{ headerShown: true }} />
+          <Stack.Screen name="FaqScreen" component={FaqScreen} options={{ headerShown: true }} />
+          <Stack.Screen name="ReceiptScreen" component={ReceiptScreen} options={{ headerShown: true }} />
         </Stack.Navigator>
       </NavigationContainer>
     </TamaguiProvider>

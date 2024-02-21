@@ -5,10 +5,10 @@ import { Avatar, View, Form, Text, Input, Label, XStack, Button } from 'tamagui'
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function RegisterScreen({ navigation }) {
-    const [show, setShow] = React.useState(false);
 
     return (
         <LinearGradient colors={['#EDEDED', '#B2BEB5','#EDEDED']} style={styles.gradient}>
+            <Text></Text>
             <View style={styles.container}>
                 <Form>
                     <Text style={styles.textHeader}>
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        margin: 50,
+        margin: 30,
+        marginVertical:50,
         backgroundColor: "#191919",
         borderRadius: 40, // Add border radius for rounded corners
         shadowColor: 'black', // Add shadow color
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
         fontSize: 28, // Adjust font size as needed
         fontWeight: 'bold', // Make text bold
         color: 'white', // Optionally change text color to white
-        marginTop: 20,
+        marginTop: 100,
     },
 
     textBody: {
