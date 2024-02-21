@@ -17,15 +17,17 @@ export default function ScanPayPage({ navigation }) {
         <View>
           <View style={styles.cardTextContainerTop}>
             <Text style={styles.cardTextName}>Sathwik C.</Text>
-            <Text style={styles.cardTextBank}>DBS</Text>
+            <Image style={{width:"100%", height:"100%", zIndex: 1, marginLeft:"15%"}} 
+                source={require('../../assets/mastercard-icon.png')}
+                resizeMode="contain"/>
           </View>
           <View style={styles.cardTextContainerMiddle}>
-            <Text style={styles.cardNum}>**** **** **** ****</Text>
+            <Text style={styles.cardNum}>**** **** **** 4444</Text>
           </View>
           <View style={styles.cardTextContainerBottom}>
             <View>
               <Text style={styles.cardName1}>CardHolder</Text>
-              <Text style={styles.cardName2}>Sathwik Blah Blah</Text>
+              <Text style={styles.cardName2}>Sathwik Chilveru</Text>
             </View>
             <View>
               <Text style={styles.cardName1}>Expiry</Text>
