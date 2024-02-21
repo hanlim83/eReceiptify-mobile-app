@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { StyleSheet } from 'react-native';
 import { Avatar, View, Form, Text, Input, Label, XStack, Button } from 'tamagui';
 import { LinearGradient } from 'expo-linear-gradient';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { CircleUser } from '@tamagui/lucide-icons'
 
 export default function RegisterScreen({ navigation }) {
