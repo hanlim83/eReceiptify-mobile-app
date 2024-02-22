@@ -15,10 +15,29 @@ export default function CameraScreen({navigation}) {
         })();
     }, []);
 
-    const handleBarCodeScanned = ({ type, data }) => {
+    const handleBarCodeScanned = async ({ type, data }) => {
         console.log(`Bar code with type ${type} and data ${data} has been scanned!`);
-        setScannedData({ type, data });
-        navigation.navigate(ConfirmScreen);
+        setScannedData(data);
+        // navigation.navigate(ConfirmScreen);
+        
+        // const dataObject = JSON.stringify(data);
+        // console.log(dataObject);
+
+        await fetch('https://ereceiptify.as.r.appspot.com/api/receipt/payment-transaction', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: data,
+          })
+          .then(response => console.log(response.json()))
+          .then(data => {
+              console.log('Success:', data);
+              navigation.navigate(ConfirmScreen);
+          })
+          .catch((error) => {
+              console.error('Error:', error);
+          });
     };
 
     if (hasPermission === null) {

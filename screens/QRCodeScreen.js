@@ -5,12 +5,29 @@ import { View, StyleSheet, Text, Image } from 'react-native';
 export default function QrCodeScreen() {
     const [qrCode, setQrCode] = useState(null);
 
-    const userInfo = {
-        name: "Sathwik C.",
-        cardNum: "1111 1111 1111 4444",
-        cardHolder: "Sathwik Chilveru",
-        expiry: "10/26",
-        points: 10000,
+    const invoiceInfo = {
+        "invoiceId": "INV12345",
+        "total": 100.00,
+        "card": {
+          "cardType": "Credit",
+          "cardNo": "1111 1111 1111 4444",
+          "expiryDate": "10/26",
+          "cardNetwork": "Mastercard"
+        },
+        "items": [
+          {
+            "itemType": "Normal",
+            "itemName": "Item 1",
+            "itemPrice": 50.00,
+            "itemQuantity": 1
+          },
+          {
+            "itemType": "Normal",
+            "itemName": "Item 2",
+            "itemPrice": 50.00,
+            "itemQuantity": 1
+          }
+        ]
       }
     
       const getUserQRCode = async() => {

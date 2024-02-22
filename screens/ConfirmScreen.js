@@ -39,7 +39,7 @@ export default function ConfirmScreen({ navigation }) {
             <View style={styles.cameraContainer}>
                 <Image style={styles.image} source={require('../assets/checked.png')} />
                 <View style={styles.textContainer}>
-                    <Text style={{fontSize:"25px"}}>You have earned <Text style={{color:"limegreen"}}>200</Text> points </Text>
+                    <Text style={{fontSize:25}}>You have earned <Text style={{color:"limegreen"}}>200</Text> points </Text>
                 </View>
 
                 <View style={styles.buttonGroup}>

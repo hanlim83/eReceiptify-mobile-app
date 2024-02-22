@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
     return (
       <Tab.Navigator
+        initalRouteName="scanPay"
         screenOptions={{
           tabBarStyle: { backgroundColor: '#ffffff' },
         }}
@@ -30,7 +31,7 @@ function MyTabs() {
           }}
         />
         <Tab.Screen
-          name="Scan & Pay"
+          name="scanPay"
           component={ScanPayPage}
           options={{
             headerStyle: { backgroundColor: '#056272' }, 
