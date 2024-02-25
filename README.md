@@ -12,14 +12,17 @@ This is a React Expo project, which serves as a starting point for developing mo
 
 ## Getting Started
 1. **Clone the repository:**
+```sh
 git clone https://github.com/hanlim83/eReceiptify-mobile-app.git
-
+```
 2. **Install dependencies:**
+```sh
 cdn eReceiptify-mobile-app
 npm install
-
+```
 3. **Start the development server:**
+```sh
 npx expo start
-
+```
 4. **Run the application on your mobile phone:**
 Download Expo Go. Scan the QR code using the app. This will start the Expo development server and open the project in the app.
