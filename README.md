@@ -22,6 +22,4 @@ npm install
 npx expo start
 
 4. **Run the application on your mobile phone:**
-Download Expo Go
-Scan the QR code using the app
-This will start the Expo development server and open the project in the app.
+Download Expo Go. Scan the QR code using the app. This will start the Expo development server and open the project in the app.
